@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+    overflow: hidden;
+    background-color: #333; /* 배경색 */
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 네비게이션 링크 스타일 */
+.navbar a {
+    float: left; /* 왼쪽 정렬 */
+    display: block; /* 블록 요소로 변환하여 네비게이션 링크를 수직으로 정렬 */
+    color: white; /* 텍스트 색상 */
+    text-align: center; /* 가운데 정렬 */
+    padding: 14px 20px; /* 위아래 왼쪽오른쪽 패딩 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+/* 네비게이션 링크 호버 시 색상 변경 */
+.navbar a:hover {
+    background-color: #ddd; /* 호버 시 배경색 변경 */
+    color: black; /* 호버 시 텍스트 색상 변경 */
+}
+
+/* 내용 영역 스타일 */
+.content {
+    padding: 0 0;
+}
+
+.home_comming{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+}

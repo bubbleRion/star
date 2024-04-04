@@ -3,76 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>저 하늘의 별들은 당신을 위해</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Navigation Bar Example</title>
 
-        #root{
-            width: 100vw;
-            height: 100vh;
-            background-color: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 21px;
-        }
-
-
-    </style>
+    
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div id="root">
-        <div id="inRoot">star rain</div>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="star.html">Star</a>
+        <a href="snow">Snow</a>
+        <a href="firefly.html">Firefly</a>
     </div>
-    <script>
-        const root = document.getElementById("root")
-        const inRoot = document.getElementById("inRoot")
-        let size = 8
-        
-        function star(starSize , rotate=""){
-            const div = document.createElement("div")
-            const div2 = document.createElement("div")
-            div.style.width = `${starSize}px`
-            div.style.height = `${starSize}px`
-            div2.style.width = `${starSize}px`
-            div2.style.height = `${starSize}px`
-            let randomColor1 = (Math.random() + 1) * 128
-            let randomColor2 = (Math.random() + 1) * 128
-            let randomColor3 = (Math.random() + 1) * 128
-            div.style.backgroundColor = `rgb(${randomColor1}, ${randomColor2}, ${randomColor3})`
-            div2.style.backgroundColor = `rgb(${randomColor1}, ${randomColor2}, ${randomColor3})`
-            let randomX = Math.random() * document.documentElement.scrollWidth
-        let randomY = Math.random() * document.documentElement.scrollHeight
-            div2.style.transform = `rotate(${rotate}deg)`
-            
-            div.style.position = "absolute"
-            div.style.left = `${randomX}px`
-            div.style.top = `${randomY}px`
-            div2.style.position = "absolute"
-            div2.style.left = `${randomX}px`
-            div2.style.top = `${randomY}px`
-            root.appendChild(div)
-            root.appendChild(div2)
-            return div
-        }
-        const stop = setInterval(()=>{
-            star(size , 45)
-            root.addEventListener("click", ()=>{  
-                    clearInterval(stop)
-                    inRoot.innerText = 'star stop'
-            })
-        }, 500)
 
-        setTimeout(()=>{
-            clearInterval(stop)
-            inRoot.innerText = 'star stop'
-        },  60 * 1000)
+    <div class="content" id="content">
+        <!-- 여기에 내용을 추가하세요 -->
         
-    </script>
+        <div class="home_comming">welcome to my homepage!!</div>
+    </div>
 </body>
 </html>
