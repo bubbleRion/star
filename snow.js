@@ -1,26 +1,44 @@
 const root = document.getElementById("root")
+let plow = 10
+let isClick = true
+let stopTrigger
 
+root.addEventListener("click", ()=>{
+    if(isClick){
+        stopTrigger = setInterval(moveSnow, 1000)
+        root.innerHTML = 'stop snow'
+        isClick = false
+    }
+    else{
+        clearInterval(stopTrigger)
+        root.innerHTML = 'start snow'
+        console.log("helllo")
+        isClick = true
+    }
+})
 function createSnow(){
-    let randomX = Math.random() * document.body.clientWidth
-    let snow = 40
-    const div = document.createElement("div")
-    div.style.width = '5px'
-    div.style.height = '20px'
-    div.style.borderRadius = '2px'
-    div.style.backgroundColor = '#fff'
-    div.style.position = 'absolute'     
-    div.style.left = `${randomX}px`
-    root.appendChild(div)
-    setInterval(()=>{
-        snow += 20
-        div.style.top = `${snow}px`
-    }, 100)
-    setTimeout(()=>{
-        div.remove()
-    }, 3500)
+    const snow = document.createElement("span")
+    snow.style.backgroundColor = '#fff'
+    snow.style.width = '5px'
+    snow.style.height = '12px'
+    snow.style.borderRadius = '5px'
+    snow.style.position = 'absolute'
+    return snow
 }
-
-setInterval(()=>{
-    createSnow()
-}, 1000)
-
+function moveSnow(){
+    let snow = createSnow()
+    let x = 10
+    let randomP = Math.floor(Math.random()*(parseInt(window.innerWidth)- 20))
+    let count = 0
+    setInterval(()=>{
+        snow.style.top = `${x}px`
+        snow.style.left = `${randomP}px`
+        root.append(snow)
+        x += 10
+        count += 1
+        if(x > (parseInt(window.innerHeight- 20))){
+            snow.remove()
+        }
+    }, 100)
+    
+}
