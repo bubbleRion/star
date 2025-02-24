@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 18px;
+}
 /* 네비게이션 바 스타일 */
 .navbar {
     overflow: hidden;
