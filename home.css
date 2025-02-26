@@ -8,6 +8,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    table-layout: fixed; /* 칸 크기 균등 배분 */
 }
 th, td {
     border: 1px solid black;
